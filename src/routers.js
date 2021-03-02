@@ -2,7 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store/index'
 import Home from './pages/Home'
-import Login from './pages/Login.vue'
+import Login from './pages/Login'
+import Projects from './pages/Projects'
+import Models from './pages/Models'
+import Settings from './pages/Settings'
+import Admin from './pages/Admin'
 
 Vue.use(VueRouter)
 
@@ -21,9 +25,35 @@ export const router = new VueRouter ({
             path: '/',
             name: 'home',
             component: Home,
-            meta: { 
-                requiresAuth: true
-              }
+          
+          },
+
+          {
+            path: '/projects',
+            name: 'projects',
+            component: Projects,
+          
+          },
+
+          {
+            path: '/models',
+            name: 'models',
+            component: Models,
+          
+          },
+
+          {
+            path: '/settings',
+            name: 'settings',
+            component: Settings,
+          
+          },
+
+          {
+            path: '/admin',
+            name: 'admins',
+            component: Admin,
+          
           },
     ]
 })

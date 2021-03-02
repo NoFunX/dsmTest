@@ -1,8 +1,13 @@
 <template>
     <div class="wrapper">
+        <v-img 
+          style="height:200px; width: 200px" 
+          class="mx-auto mt-5"
+          :src="img"
+          ></v-img>
         <form
             class="mx-auto secondary"
-            style="width: 30%; margin-top: 8%; box-shadow: 0 7px 10px grey; "
+            style="width: 30%; margin-top: 2%; margin-bottom: 4%; box-shadow: 0 7px 10px grey; "
         >
             <div class="primary pt-3 pb-3">
                 <span style="color: white" class="ml-5">Авторизация</span>
@@ -37,6 +42,8 @@
 
              <v-btn class="ml-11 mt-7 primary pr-14 pl-14 mb-10" @click="loginIn">Войти</v-btn>
         </form>
+
+        <span style="margin-bottom: 2%; display: inline-block; ">DSM Portal 1.0.2 © 2021</span>
   </div>
 </template>
 
@@ -44,15 +51,17 @@
   export default {
     data(){
       return {
-        login: "",
-        password : ""
+        img: require('C:/Evgeniy/dsm/src/img/logo1.png'),
+        JwtRequestDto: {
+          login: "",
+          password : ""
+        }
       }
     },
 
      methods: {
       loginIn: function () {
-        const { login, password } = this
-        this.$store.dispatch('login', { login, password })
+        this.$store.dispatch('login', this.JwtRequestDto)
        .then(() => this.$router.push('/'))
        .catch(err => console.log(err))
       }

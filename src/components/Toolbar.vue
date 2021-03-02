@@ -1,18 +1,23 @@
 <template>
-  <v-card>
+  <v-card style="box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2)">
     <v-toolbar dense height="64px">
      
 
-      <v-toolbar-title>
+      <v-toolbar-title class="ml-5">
           <v-img :src="img[0]"></v-img>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn class="mr-16" icon>
-        <v-icon class="rounded-circle primary mr-3"></v-icon>
-        <span></span>
-      </v-btn>
+      <div style="margin-right: 120px" class="d-flex">
+        <div class="mr-3 d-inline-block primary mt-1" style="border-radius: 50%; width: 40px; height: 40px"></div>
+        <div>
+        <b class="text-lg-h6">Петр Иванов</b>
+        <span class="d-block mt-n2" style="color: #b1b3b1">User@gmail.com</span>
+        </div>
+      </div>
+
+      <div style="width: 1px; height: 40px" class="grey mr-7"></div>
 
       <v-btn icon width="8px" heigth="4px" class="mr-5">
           <v-img :src="img[1]"></v-img>
